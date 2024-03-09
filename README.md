@@ -18,11 +18,40 @@ import React, { Component } from 'react'
 import WebGuide from 'web-guide-th'
 
 class Example extends Component {
+  data = [
+    {
+      id: 'com_1',
+      description: 'com_1',
+      position: 'bottom'
+    },
+    {
+      id: 'com_2',
+      description: 'com_2',
+      position: 'left start'
+    }
+  ]
   render() {
-    return <WebGuide />
+    return <WebGuide active={true} data={data} />
   }
 }
 ```
+
+## Parameters
+
+| Parameter         | _Type_             | Description                                       |
+| ----------------- | ------------------ | ------------------------------------------------- |
+| active            | boolean            | Enable/disable guide                              |
+| data              | array              | List of guides                                    |
+| step              | number             | State to control step                             |
+| defaultStep       | number             | Initial step on load                              |
+| GuideDialogProps  | object             | Props for customizing the guide dialog            |
+| - gap             | pixel value        | Space between focus area and guide dialog         |
+| - padding         | pixel value        | Space around focus area                           |
+| - isSmooth        | boolean            | Smooth moving between steps                       |
+| - background      | string             | Hex or RGB color code for background              |
+| - styleOuter      | object             | CSS style of outer area                           |
+| customGuideDialog | component function | Function for rendering a custom guide dialog      |
+| onCompleteGuide   | callback function  | Callback fired when reaching the end of the guide |
 
 ## License
 
