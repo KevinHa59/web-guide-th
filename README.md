@@ -15,12 +15,11 @@ npm install --save web-guide-th
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'web-guide-th'
-import 'web-guide-th/dist/index.css'
+import WebGuide from 'web-guide-th'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return <WebGuide />
   }
 }
 ```
