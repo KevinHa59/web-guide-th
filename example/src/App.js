@@ -7,8 +7,7 @@ const comp_ids = [
   {
     id: 'introduction',
     title: 'Introduction',
-    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
-    position: 'bottom'
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.'
   },
   {
     id: 'article-body',
@@ -43,6 +42,9 @@ const App = () => {
           gap: '10px',
           padding: '1px',
           styleOuter: { backdropFilter: 'blur(5px)' }
+        }}
+        customGuideDialog={(current_step_data) => {
+          return current_step_data.description
         }}
       />
 

@@ -21,11 +21,13 @@ class Example extends Component {
   data = [
     {
       id: 'com_1',
+      title: 'title 1',
       description: 'com_1',
       position: 'bottom'
     },
     {
       id: 'com_2',
+      title: 'title 2',
       description: 'com_2',
       position: 'left start'
     }
@@ -34,6 +36,32 @@ class Example extends Component {
     return <WebGuide active={true} data={data} />
   }
 }
+```
+
+## Data guide
+
+```jsx
+const data = [
+  {
+    id: component id,
+    title: title show on top left of guide dialog,
+    description: main component description,
+    position: position of guide dialog
+      * position options:
+          - top
+          - top start
+          - top end
+          - left
+          - left start
+          - left end
+          - bottom [default]
+          - bottom start
+          - bottom end
+          - right
+          - right start
+          - right end
+  }
+]
 ```
 
 ## Parameters
@@ -49,9 +77,23 @@ class Example extends Component {
 | - padding         | pixel value        | Space around focus area                           |
 | - isSmooth        | boolean            | Smooth moving between steps                       |
 | - background      | string             | Hex or RGB color code for background              |
+| - styleInner      | object             | CSS style of inner area                           |
 | - styleOuter      | object             | CSS style of outer area                           |
 | customGuideDialog | component function | Function for rendering a custom guide dialog      |
 | onCompleteGuide   | callback function  | Callback fired when reaching the end of the guide |
+
+## Parameters Usage Examples
+
+- customGuideDialog: when using customGuideDialog, entire built in guide dialog will be replaced including title, close button, description, moving forward and backward buttons.
+
+```jsx
+<WebGuide
+  ...
+  customGuideDialog={(current_step_data) => {
+    return current_step_data.description
+  }}
+/>
+```
 
 ## License
 

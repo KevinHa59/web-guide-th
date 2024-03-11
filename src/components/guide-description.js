@@ -18,7 +18,7 @@ export default function GuideDescription({ onStepChange, onEndTour }) {
     transition: GuideDialogProps?.isSmooth && 'ease 0.5s',
     zIndex: 1000
   }
-  const posPart = position.split(' ')
+  const posPart = position ? position.split(' ') : ['bottom']
   if (posPart[0] === 'top') {
     Icon = (
       <div style={{ position: 'absolute', top: 'calc(100% - 8px)' }}>
