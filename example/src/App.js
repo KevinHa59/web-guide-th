@@ -5,49 +5,24 @@ import 'web-guide-th/dist/index.css'
 
 const comp_ids = [
   {
-    id: 'com_1',
-    description: 'com_1',
+    id: 'introduction',
+    title: 'Introduction',
+    description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
     position: 'bottom'
   },
   {
-    id: 'com_2',
-    description: 'com_2',
-    position: 'left start'
+    id: 'article-body',
+    title: 'Body',
+    description:
+      'Error doloremque maiores dolor suscipit excepturi voluptatum?',
+    position: 'top start'
   },
   {
-    id: 'com_3',
-    description: 'com_3',
-    position: 'right'
-  },
-  {
-    id: 'com_4',
-    description: 'com_4',
-    position: 'bottom'
-  },
-  {
-    id: 'com_5',
-    description: 'com_5',
-    position: 'left'
-  },
-  {
-    id: 'com_6',
-    description: 'com_6',
-    position: 'right'
-  },
-  {
-    id: 'com_7',
-    description: 'com_7',
-    position: 'bottom'
-  },
-  {
-    id: 'com_8',
-    description: 'com_8',
-    position: 'left'
-  },
-  {
-    id: 'com_9',
-    description: 'com_9',
-    position: 'right'
+    id: 'article-conclusion',
+    title: 'Conclusion',
+    description:
+      'iusto fugit accusantium modi est provident veniam labore incidunt architecto necessitatibus earum.',
+    position: 'right start'
   }
 ]
 
@@ -59,35 +34,97 @@ const App = () => {
         flexDirection: 'column',
         width: '100%',
         gap: '20px'
-        // background: '#000'
       }}
     >
-      <WebGuide active={true} data={comp_ids} />
-      <Box id={'com_1'} width={'200px'} height={'150px'} left={100} />
-      <Box id={'com_2'} width={'200px'} height={'250px'} left={230} />
-      <Box id={'com_3'} width={'200px'} height={'150px'} left={940} />
-      <Box id={'com_4'} width={'200px'} height={'150px'} left={50} />
-      <Box id={'com_5'} width={'200px'} height={'150px'} left={712} />
-      <Box id={'com_6'} width={'200px'} height={'150px'} left={328} />
-      <Box id={'com_7'} width={'200px'} height={'150px'} left={50} />
-      <Box id={'com_8'} width={'200px'} height={'150px'} left={712} />
-      <Box id={'com_9'} width={'200px'} height={'150px'} left={328} />
+      <WebGuide
+        active={true}
+        data={comp_ids}
+        GuideDialogProps={{
+          gap: '10px',
+          padding: '1px',
+          styleOuter: { backdropFilter: 'blur(5px)' }
+        }}
+      />
+
+      <div
+        id='introduction'
+        style={{
+          marginBottom: '20px',
+          backgroundColor: '#f9f9f9',
+          border: '1px solid #ddd',
+          padding: '10px'
+        }}
+      >
+        <h2>Introduction</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque saepe
+          dolorum hic magni vel esse nesciunt unde in ducimus, facere quas
+          natus, illo nostrum delectus iusto harum dolores ut repellendus! Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Vitae eveniet eos,
+          architecto quos impedit assumenda aut sapiente quam facilis aperiam
+          odio recusandae accusamus illo voluptates id harum dicta labore rerum?
+        </p>
+      </div>
+
+      <div
+        id='article-body'
+        style={{
+          marginBottom: '20px',
+          backgroundColor: ' #f9f9f9',
+          border: '1px solid #ddd',
+          padding: '10px',
+          margin: '0 250px 0 250px'
+        }}
+      >
+        <h2>Body</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat est
+          error, ipsum sapiente sit nihil enim voluptatibus necessitatibus nemo
+          provident quidem delectus iste magni unde minus eum et eaque facilis.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam
+          maiores, quo enim porro doloremque reiciendis. Nisi consectetur
+          perferendis porro nam eaque. Itaque, vel numquam hic iste nemo ipsa
+          molestias quia? Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit. Quas culpa sapiente dignissimos sunt asperiores. Ut sunt nihil
+          porro fugit dolorem labore necessitatibus nesciunt aliquid ipsum!
+          Ducimus eos possimus dignissimos commodi. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Veritatis necessitatibus, sequi ea quae
+          atque dolorum, sunt provident recusandae asperiores voluptates ipsa
+          molestiae. Veritatis quo neque dignissimos repudiandae nobis id quasi!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae et
+          laboriosam provident labore omnis ipsum voluptate quo tempore
+          exercitationem porro optio, similique, molestias earum architecto
+          deleniti maiores aperiam non recusandae? Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit. Maiores nam facilis, dolor quas a
+          incidunt ipsam nesciunt sint pariatur illo animi vero optio provident?
+          Maiores repellat doloribus voluptatibus dolore quibusdam!
+        </p>
+      </div>
+
+      <div
+        id='article-conclusion'
+        style={{
+          marginBottom: '20px',
+          backgroundColor: '#f9f9f9',
+          border: '1px solid #ddd',
+          padding: '10px',
+          width: '50%'
+        }}
+      >
+        <h2>Conclusion</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse neque
+          nobis maiores, omnis fuga ullam laborum! Reiciendis porro temporibus,
+          quidem reprehenderit tenetur placeat alias consequuntur quaerat
+          numquam id veritatis consectetur!
+        </p>
+      </div>
     </div>
   )
 }
 
 export default App
-
-function Box({ id, width, height, left }) {
-  return (
-    <div
-      id={id}
-      style={{
-        width: width,
-        height: height,
-        marginLeft: left,
-        background: 'rgba(0, 100,255, 1)'
-      }}
-    ></div>
-  )
-}
