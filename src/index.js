@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import GuideDescription from './components/guide-description'
 import CoverArea from './components/cover-area'
+import { SxPropTypes } from './props/css-props'
 
 export const webGuideContext = createContext()
 export const WebGuide = ({
@@ -185,20 +186,22 @@ export const WebGuide = ({
   )
 }
 
+// Define the shape of GuideDialogProps
+const GuideDialogPropTypes = {
+  gap: PropTypes.string,
+  padding: PropTypes.string,
+  isSmooth: PropTypes.bool,
+  background: PropTypes.string,
+  styleInner: PropTypes.shape(SxPropTypes),
+  styleOuter: PropTypes.shape(SxPropTypes)
+}
+
 WebGuide.propTypes = {
   active: PropTypes.bool,
   step: PropTypes.number,
   defaultStep: PropTypes.number,
-  data: PropTypes.any,
-  GuideDialogProps: PropTypes.shape({
-    gap: PropTypes.string,
-    padding: PropTypes.string,
-    isSmooth: PropTypes.bool,
-    background: PropTypes.string,
-    styleOuter: PropTypes.shape({
-      background: PropTypes.string
-    })
-  }),
-  customGuideDialog: PropTypes.node,
+  data: PropTypes.any.isRequired,
+  GuideDialogProps: PropTypes.shape(GuideDialogPropTypes),
+  customGuideDialog: PropTypes.element,
   onCompleteGuide: PropTypes.func
 }

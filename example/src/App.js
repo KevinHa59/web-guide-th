@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { WebGuide } from 'web-guide-th'
-import 'web-guide-th/dist/index.css'
 
 const comp_ids = [
   {
@@ -42,9 +41,6 @@ const App = () => {
           gap: '10px',
           padding: '1px',
           styleOuter: { backdropFilter: 'blur(5px)' }
-        }}
-        customGuideDialog={(current_step_data) => {
-          return current_step_data.description
         }}
       />
 
